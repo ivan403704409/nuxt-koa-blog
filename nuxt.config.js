@@ -1,4 +1,7 @@
 module.exports = {
+  build: {
+    vendor: ['axios']
+  },
   /*
   ** Headers of the page
   */

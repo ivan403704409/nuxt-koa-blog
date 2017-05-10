@@ -21,4 +21,7 @@ app.use(async (ctx, next) => {
   await nuxt.render(ctx.req, ctx.res)
 })
 
-app.listen(3000)
+let isProduction = process.env.NODE_ENV === 'production'
+let PORT = process.env.PORT || (isProduction ? 80 : 9000)
+console.log(PORT)
+app.listen(PORT)
