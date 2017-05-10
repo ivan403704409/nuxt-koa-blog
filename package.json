@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon -w app.js -w nuxt.config.js app.js",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node app.js",
+    "generate": "nuxt generate",
+    "start": "npm run build && cross-env NODE_ENV=production pm2 start app.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
