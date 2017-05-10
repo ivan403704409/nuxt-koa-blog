@@ -1,7 +1,6 @@
 var Koa = require('koa')
 var app = new Koa()
 var Nuxt = require('nuxt')
-
 var config = require('./nuxt.config.js')
 config.dev = !(app.env === 'production')
 

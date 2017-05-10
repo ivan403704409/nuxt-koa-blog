@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="m-blog-layout">
     <nuxt/>
     <my-footer/>
   </div>
@@ -15,14 +15,27 @@ export default {
 }
 </script>
 
-<style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
+<style lang="scss">
+// .container
+// {
+//   margin: 0;
+//   width: 100%;
+//   padding: 100px 0;
+//   text-align: center;
+// }
+
+.container{
+    position: relative;
+    padding-top: 165px;
+    margin: 0 auto;
+    width: 100%;
 }
+@media screen and (max-width: 480px){
+  .container{
+    padding-top: 0;
+  }
+}
+
 
 .button, .button:visited
 {
