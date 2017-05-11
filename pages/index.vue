@@ -1,24 +1,58 @@
 <template>
   <section class="container">
-    <article-item>123</article-item>
-
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      Universal Vue.js Application Framework
-    </h1>
     <nuxt-link class="button" to="/about">
-      About page
+      About page 
     </nuxt-link>
+    <br>
+    <br>
+    <template v-for="item in users">
+      <div class="button">
+        {{item.name}}
+      </div>
+      <br>
+      <br>
+
+    </template>
+    <div >
+      
+    </div>
   </section>
 </template>
 
 <script>
 import articleItem from '~components/article-item.vue'
+import axios from 'axios'
 
 export default {
   components: {
     articleItem,
   },
+  data(){
+    return {
+      users: [],
+      name: '',
+    }
+  },
+  methods: {
+    
+  },
+  async asyncData (context) {
+
+      return new Promise((resolve, reject) => {
+        axios({
+            url: 'http://127.0.0.1:9001',
+          })
+          .then(({
+            data
+          }) => {
+            console.log(typeof data)
+            resolve({
+              users: data
+            })
+          })
+      })
+
+  }
 }
 </script>
 

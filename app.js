@@ -4,6 +4,10 @@ var Nuxt = require('nuxt')
 var config = require('./nuxt.config.js')
 config.dev = !(app.env === 'production')
 
+require('./server.js')
+
+
+
 var nuxt = new Nuxt(config)
 
 // Build only in dev mode

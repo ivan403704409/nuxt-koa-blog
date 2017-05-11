@@ -14,10 +14,15 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-register": "^6.24.1",
     "cross-env": "^3.1.4",
     "koa": "^2.0.0",
     "muse-ui": "^2.0.2",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "pg": "^6.1.5",
+    "pg-native": "^1.10.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
