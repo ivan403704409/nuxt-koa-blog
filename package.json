@@ -5,7 +5,7 @@
   "author": "ivan.liu <403704409@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w app.js -w nuxt.config.js app.js",
+    "dev": "nodemon -w run.js -w nuxt.config.js run.js",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "npm run build && cross-env NODE_ENV=production pm2 start app.js",
@@ -19,7 +19,8 @@
     "babel-register": "^6.24.1",
     "cross-env": "^3.1.4",
     "koa": "^2.0.0",
-    "muse-ui": "^2.0.2",
+    "koa2-cors": "^2.0.3",
+    "muse-ui": "^2.0.3",
     "nuxt": "latest",
     "pg": "^6.1.5",
     "pg-native": "^1.10.1"

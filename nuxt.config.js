@@ -30,6 +30,6 @@ module.exports = {
 
   plugins: [
     // '~plugins/muse-ui',
-    // { src: '~plugins/muse-ui.js', ssr: !false }
+    { src: '~plugins/muse-ui.js', ssr: !false }
   ],
 }

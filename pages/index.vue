@@ -14,7 +14,7 @@
 
     </template>
     <div >
-      
+      <article-item></article-item>
     </div>
   </section>
 </template>
@@ -37,21 +37,14 @@ export default {
     
   },
   async asyncData (context) {
+        try{
+            let {data} = await axios.get('/api/123')
+            return {
+                users: data
+            }
+        }catch(e){
 
-      return new Promise((resolve, reject) => {
-        axios({
-            url: 'http://127.0.0.1:9001',
-          })
-          .then(({
-            data
-          }) => {
-            console.log(typeof data)
-            resolve({
-              users: data
-            })
-          })
-      })
-
+        }
   }
 }
 </script>
