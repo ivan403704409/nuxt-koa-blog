@@ -38,7 +38,7 @@ export default {
   },
   async asyncData (context) {
         try{
-            let {data} = await axios.get('/api/123')
+            let {data} = await axios.get('http://localhost:9099/tag/list')
             return {
                 users: data
             }
