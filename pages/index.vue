@@ -14,7 +14,6 @@
 
     </template>
     <div >
-      <article-item></article-item>
     </div>
   </section>
 </template>
