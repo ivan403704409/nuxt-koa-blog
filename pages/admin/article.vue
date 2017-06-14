@@ -15,7 +15,7 @@
 
   <mu-text-field v-model="data.content" label="文章内容..." :errorText="multiLineInputErrorText" @textOverflow="handleMultiLineOverflow" multiLine :rows="20" :max-rows="20" fullWidth labelFloat/><br/>
 
-  <mu-checkbox :label="item.name" v-for="item in tags" :key="item"/>
+  <mu-checkbox v-model="data.tags" :native-value="item.id+''" :label="item.name" v-for="item in tags" :key="item"/>
 
   <div class="text-right">
     <mu-raised-button @click="save" label="发布文章" class="demo-raised-button" primary/>
