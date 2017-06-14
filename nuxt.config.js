@@ -22,6 +22,7 @@ module.exports = {
   */
   css: [
     '~assets/css/main.css',
+    // '~assets/css/muse-ui.css',
   ],
   /*
   ** Customize the progress-bar color
@@ -29,7 +30,7 @@ module.exports = {
   loading: { color: '#3B8070' },
 
   plugins: [
-    // '~plugins/muse-ui',
+    '~plugins/muse-ui',
     { src: '~plugins/muse-ui.js', ssr: !false }
   ],
 }

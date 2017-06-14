@@ -5,6 +5,10 @@
       About page
   </nuxt-link>
 
+  <nuxt-link class="button" to="/article">
+      Article page
+  </nuxt-link>
+
 
   <mu-text-field v-model="data.title" label="标题" fullWidth labelFloat />
   <br/>
@@ -21,6 +25,7 @@
 </template>
 <script>
 import axios from 'axios'
+import { addArticle } from '../../model/article'
 export default {
   data(){
     return {
@@ -39,17 +44,11 @@ export default {
     },
 
     async save(){
-      axios({
-        url: 'http://localhost:9099/article/add',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          title: this.data.title,
-          content: this.data.content,
-        }
-      })
+      let reqData = {
+        title: this.data.title,
+        content: this.data.content,
+      }
+      await addArticle(reqData)
     },
 
   },

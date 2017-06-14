@@ -1,0 +1,49 @@
+<template>
+  <section class="page-article">
+
+    <nuxt-link class="button" to="/admin/article">
+        Edit About page
+    </nuxt-link>
+
+
+    <div>
+      <mu-card class="mgb-default" v-for="item in list">
+        <mu-card-title :title="item.title" :subTitle="item.ctime"/>
+        <mu-card-text>
+          {{item.content}}
+        </mu-card-text>
+        <mu-card-actions>
+          <mu-flat-button :label="item.tag"/>
+          <mu-flat-button label="Action 2"/>
+        </mu-card-actions>
+      </mu-card>
+    </div>
+  </section>
+</template>
+<script>
+import { getArticleList } from '../model/article'
+export default {
+  async asyncData ({ req }) {
+    try{
+        let {data} = await getArticleList()
+        return {
+            list: data
+        }
+    }catch(e){
+
+    }
+    
+  },
+  head () {
+    return {
+      title: `About Page (${this.name}-side)`
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.page-article{
+  margin: 0 100px;
+}
+</style>
