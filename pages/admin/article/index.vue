@@ -25,7 +25,7 @@
 </template>
 <script>
 import axios from 'axios'
-import { addArticle } from '../../model/article'
+import { addArticle } from '../../../model/article'
 export default {
   data(){
     return {

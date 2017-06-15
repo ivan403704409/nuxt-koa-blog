@@ -13,12 +13,20 @@
           :subTitle="item.ctime"
           @click.native="$router.push('/article/' + item.id)"
         />
+
+        <mu-flat-button 
+          label="编辑" 
+          @click.native="$router.push('/admin/article/' + item.id)"
+        />
         <mu-card-text>
           <vue-markdown>{{item.content}}</vue-markdown>
         </mu-card-text>
         <mu-card-actions>
           <mu-flat-button :label="item.tag"/>
-          <mu-flat-button label="Action 2"/>
+          <mu-flat-button 
+            label="编辑" 
+            @click.native="$router.push('/admin/article/' + item.id)"
+          />
         </mu-card-actions>
       </mu-card>
     </div>
