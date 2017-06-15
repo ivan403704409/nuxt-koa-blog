@@ -8,9 +8,13 @@
 
     <div>
       <mu-card class="mgb-default" v-for="item in list">
-        <mu-card-title :title="item.title" :subTitle="item.ctime"/>
+        <mu-card-title 
+          :title="item.title" 
+          :subTitle="item.ctime"
+          @click.native="$router.push('/article/' + item.id)"
+        />
         <mu-card-text>
-          {{item.content}}
+          <vue-markdown>{{item.content}}</vue-markdown>
         </mu-card-text>
         <mu-card-actions>
           <mu-flat-button :label="item.tag"/>
@@ -21,8 +25,13 @@
   </section>
 </template>
 <script>
-import { getArticleList } from '../model/article'
+import { getArticleList } from '../../model/article'
+import VueMarkdown from 'vue-markdown'
+
 export default {
+  components: {
+    VueMarkdown,
+  },
   async asyncData ({ req }) {
     try{
         let {data} = await getArticleList()

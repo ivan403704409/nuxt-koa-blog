@@ -5,7 +5,7 @@
       About page
   </nuxt-link>
 
-  <nuxt-link class="button" to="/article">
+  <nuxt-link class="button" to="/article/list">
       Article page
   </nuxt-link>
 

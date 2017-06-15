@@ -1,6 +1,22 @@
 import axios from 'axios'
 
 
+export function getArticleById(id){
+	return new Promise((resolve, reject) => {
+		axios({
+			url: '/api/article/index',
+			method: 'GET',
+			params: {
+				id,
+			},
+		})
+		.then(({data}) => {
+			resolve(data)
+		})
+	})
+}
+
+
 export function getArticleList(){
 	return new Promise((resolve, reject) => {
 		axios({
@@ -28,7 +44,7 @@ export function addArticle(reqData){
 			resolve(data)
 		})
 		.catch(() => {
-			
+
 		})
 	})
 }

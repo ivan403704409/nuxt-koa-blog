@@ -22,6 +22,10 @@ a, a:hover, a:focus, a:visited
   color: #41B883;
 }
 
+img{
+  max-width: 100%;
+}
+
 .logo {
   width: 243px;
   height: 218px;
