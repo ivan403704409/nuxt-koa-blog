@@ -5,13 +5,17 @@
       About page
   </nuxt-link>
 
+  <nuxt-link class="button" to="/article/list">
+      Article page
+  </nuxt-link>
+
 
   <mu-text-field v-model="data.title" label="标题" fullWidth labelFloat />
   <br/>
 
   <mu-text-field v-model="data.content" label="文章内容..." :errorText="multiLineInputErrorText" @textOverflow="handleMultiLineOverflow" multiLine :rows="20" :max-rows="20" fullWidth labelFloat/><br/>
 
-  <mu-checkbox :label="item.name" v-for="item in tags" :key="item"/>
+  <mu-checkbox v-model="data.tags" :native-value="item.id+''" :label="item.name" v-for="item in tags" :key="item"/>
 
   <div class="text-right">
     <mu-raised-button @click="save" label="发布文章" class="demo-raised-button" primary/>
@@ -21,6 +25,7 @@
 </template>
 <script>
 import axios from 'axios'
+import { addArticle } from '../../../model/article'
 export default {
   data(){
     return {
@@ -39,17 +44,11 @@ export default {
     },
 
     async save(){
-      axios({
-        url: 'api/article/add',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          title: this.data.title,
-          content: this.data.content,
-        }
-      })
+      let reqData = {
+        title: this.data.title,
+        content: this.data.content,
+      }
+      await addArticle(reqData)
     },
 
   },

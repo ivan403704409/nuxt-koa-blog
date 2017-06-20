@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  asyncData ({ req }) {
+  async asyncData ({ req }) {
     return {
       name: req ? 'server' : 'client'
     }
