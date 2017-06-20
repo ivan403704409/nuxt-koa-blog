@@ -42,7 +42,7 @@ export default {
   },
   async asyncData ({ req }) {
     try{
-        let {data} = await getArticleList()
+        let data = await getArticleList()
         return {
             list: data
         }

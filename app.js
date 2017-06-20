@@ -18,8 +18,6 @@ var nuxt = new Nuxt(config)
 
 
 app.use(async (ctx, next) => {
-   console.log(123)
-   console.log(ctx.res)
   	ctx.status = 200 // koa defaults to 404 when it sees that status is unset
   	await nuxt.render(ctx.req, ctx.res)
     // next()

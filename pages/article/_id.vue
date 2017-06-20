@@ -21,7 +21,6 @@ export default {
   },
   async asyncData ({ req, params }) {
     try{
-        console.log(params)
         let {data} = await getArticleById(params.id)
         return {
             article: data,
