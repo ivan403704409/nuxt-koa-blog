@@ -40,7 +40,7 @@ export default {
 
     async save(){
       axios({
-        url: 'http://localhost:9099/article/add',
+        url: 'api/article/add',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

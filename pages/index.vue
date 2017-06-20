@@ -21,7 +21,6 @@
 <script>
 import articleItem from '~components/article-item.vue'
 import axios from 'axios'
-
 export default {
   components: {
     articleItem,
@@ -36,14 +35,14 @@ export default {
     
   },
   async asyncData (context) {
-        try{
-            let {data} = await axios.get('http://localhost:9099/tag/list')
+        // try{
+            let {data} = await axios.get('api/tag/list')
             return {
                 users: data
             }
-        }catch(e){
-
-        }
+        // }catch(e){
+          // console.log(e)
+        // }
   }
 }
 </script>
